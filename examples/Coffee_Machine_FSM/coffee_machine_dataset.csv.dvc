@@ -1,0 +1,5 @@
+outs:
+- md5: 6d3a91681d4bb5cc09f9d14145142220
+  size: 519
+  hash: md5
+  path: coffee_machine_dataset.csv

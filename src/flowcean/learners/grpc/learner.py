@@ -247,7 +247,7 @@ def _predictions_to_frame(
         ]
         for prediction in predictions.predictions
     ]
-    return pl.DataFrame(data)
+    return pl.DataFrame(data).transpose()
 
 
 def _loglevel_from_proto(loglevel: LogLevel.V) -> int:

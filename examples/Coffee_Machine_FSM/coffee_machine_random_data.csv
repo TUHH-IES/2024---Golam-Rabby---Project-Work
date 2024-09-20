@@ -1,0 +1,9 @@
+step,input_alphabet,output_alphabet,current_state
+1,0,1,2
+2,2,0,6
+3,1,0,6
+4,1,0,6
+5,1,0,6
+6,2,0,6
+7,0,0,6
+8,1,0,6
