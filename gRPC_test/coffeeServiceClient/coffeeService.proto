@@ -23,7 +23,7 @@ enum CoffeeSize {
   LARGE = 3;
 }
 
-// Message which represents  a coffee order
+// Message which represents a coffee order
 message CoffeeOrder {
   int32 order_id = 1;
   CoffeeType type = 2;
@@ -41,7 +41,7 @@ message MakeCoffeeRequest {
 // Response message after making a coffee order
 message MakeCoffeeResponse {
   int32 order_id = 1;
-  string status = 2; // For example-> "Order received", "Preparing"
+  string status = 2; // For example like-> "Order received", "Preparing"
 }
 
 // Request message to get order status
@@ -52,14 +52,13 @@ message GetOrderStatusRequest {
 // Response message for order status
 message GetOrderStatusResponse {
   int32 order_id = 1;
-  string status = 2; // For example-> "Preparing", "Ready", "Completed"
+  string status = 2; // For example like-> "Preparing", "Ready", "Completed"
 }
 
 // The coffee service definition
 service CoffeeService {
-
+  
   rpc MakeCoffee (MakeCoffeeRequest) returns (MakeCoffeeResponse);
-
 
   rpc GetOrderStatus (GetOrderStatusRequest) returns (GetOrderStatusResponse);
 }
