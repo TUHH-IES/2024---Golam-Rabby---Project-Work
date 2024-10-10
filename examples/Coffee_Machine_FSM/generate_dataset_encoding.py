@@ -72,7 +72,7 @@ if __name__ == "__main__":
     num_steps: int = random.randint(5, 10)
     random_data_df: pl.DataFrame = generate_random_data(num_steps)
 
-    # Display the generated DataFrame
+    # Displaying the generated DataFrame
     print(random_data_df)
 
     # Saving the generated data to a CSV file

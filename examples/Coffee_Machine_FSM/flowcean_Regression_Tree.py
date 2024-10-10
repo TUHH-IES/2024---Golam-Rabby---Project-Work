@@ -20,7 +20,7 @@ def main() -> None:
     flowcean.cli.initialize_logging()
     logger.info("Flowcean logging has been initialized.")
 
-    num_steps: int = random.randint(5, 40)
+    num_steps: int = random.randint(5, 20)
     logger.info(f"Generating random dataset with {num_steps} steps.")
     df: pl.DataFrame = generate_random_data(num_steps)
 
