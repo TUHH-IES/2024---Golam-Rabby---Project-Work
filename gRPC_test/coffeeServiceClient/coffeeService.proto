@@ -1,0 +1,64 @@
+syntax = "proto3";
+
+package coffee;
+
+option java_multiple_files = true;
+option java_package = "com.example.coffee";
+option java_outer_classname = "CoffeeProto";
+
+// Enum for coffee types
+enum CoffeeType {
+  UNKNOWN_COFFEE = 0;
+  ESPRESSO = 1;
+  LATTE = 2;
+  CAPPUCCINO = 3;
+  AMERICANO = 4;
+}
+
+// Enum for coffee sizes
+enum CoffeeSize {
+  UNKNOWN_SIZE = 0;
+  SMALL = 1;
+  MEDIUM = 2;
+  LARGE = 3;
+}
+
+// Message which represents a coffee order
+message CoffeeOrder {
+  int32 order_id = 1;
+  CoffeeType type = 2;
+  CoffeeSize size = 3;
+  string customer_name = 4;
+}
+
+// Request message to make a coffee order
+message MakeCoffeeRequest {
+  CoffeeType type = 1;
+  CoffeeSize size = 2;
+  string customer_name = 3;
+}
+
+// Response message after making a coffee order
+message MakeCoffeeResponse {
+  int32 order_id = 1;
+  string status = 2; // For example like-> "Order received", "Preparing"
+}
+
+// Request message to get order status
+message GetOrderStatusRequest {
+  int32 order_id = 1;
+}
+
+// Response message for order status
+message GetOrderStatusResponse {
+  int32 order_id = 1;
+  string status = 2; // For example like-> "Preparing", "Ready", "Completed"
+}
+
+// The coffee service definition
+service CoffeeService {
+  
+  rpc MakeCoffee (MakeCoffeeRequest) returns (MakeCoffeeResponse);
+
+  rpc GetOrderStatus (GetOrderStatusRequest) returns (GetOrderStatusResponse);
+}
